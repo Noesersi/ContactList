@@ -1,0 +1,37 @@
+.img-fluid-custom {
+    max-width: 200px; 
+    max-height: 200px;
+    object-fit: cover;
+    padding: 3%;
+  }
+  .icon{
+    margin-right: 5px;
+    color: gray;
+  }
+  ul {
+    list-style: none;
+  }
+  .button-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .button-container-bottom {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  .delete-button {
+    background-color: #46255f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #ff3333;
+  }
+  

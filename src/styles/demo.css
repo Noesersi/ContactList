@@ -1,0 +1,41 @@
+
+.addContactBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid black; 
+    background-color: #fff; 
+    border-radius: 15px; 
+    padding: 30px;
+    width: 300px; 
+    margin: 20px auto; }
+ 
+  .addContactBox input {
+    width: 100%;
+    margin-bottom: 15px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .addContactBox button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .addContactBox button:hover {
+    background-color: #45a049;
+  }
+  
+ul {
+    list-style: none;
+  }
