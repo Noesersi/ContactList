@@ -3,13 +3,30 @@ import { useParams, useNavigate } from "react-router"
 import { useEdit } from "../../ hooks/useEdit";
 import { Link } from "react-router-dom";
 
+
+
 export const EditContact = () => {
     const params = useParams();
-    const {data, setData, editData} = useEdit(params.id);
+    const {data, setData, editData } = useEdit(params.id);
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const trimmedNombre = data.nombre.trim();
+      const trimmedCorreo = data.correo.trim();
+      const trimmedTelefono = data.telefono.trim();
+      const trimmedDireccion = data.direccion.trim();
+
+      if(trimmedNombre && trimmedCorreo && trimmedTelefono && trimmedDireccion){
+        editData();
+      } else {
+        alert("Por favor, completa todos los campos antes de editar el contacto.");
+      }
+    };
+
     return (
         <div className="addContactBox">
       <h3>Añadir contacto</h3>
-      <form onSubmit={editData} >
+      <form onSubmit={handleSubmit} >
         <ul>
           <li>
             <label>

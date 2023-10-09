@@ -1,21 +1,39 @@
-import { useForm } from "../../ hooks/useForms";
 import { Link } from "react-router-dom";
 import React from "react";
+import useAppContext from "../../context/AppContext";
 
 export const AddForm = () => {
-  const { data, setData, postData } = useForm();
+  const {store, actions} = useAppContext();
+  const {userInput} = store;
+  const {postData, setUserInput} = actions;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const trimmedNombre = userInput.nombre.trim();
+    const trimmedCorreo = userInput.correo.trim();
+    const trimmedTelefono = userInput.telefono.trim();
+    const trimmedDireccion = userInput.direccion.trim();
+
+    if(trimmedNombre && trimmedCorreo && trimmedTelefono && trimmedDireccion){
+      postData();
+    } else {
+      alert("Por favor, completa todos los campos antes de guardar el contacto.");
+    }
+  };
+
   return (
     <div className="addContactBox">
       <h3>Añadir contacto</h3>
-      <form onSubmit={postData}>
+      <form onSubmit={handleSubmit}>
         <ul>
           <li>
             <label>
               <strong>Nombre:</strong>
               <input
                 type="text"
-                value={data.nombre}
-                onChange={(e) => setData({ ...data, nombre: e.target.value })}
+                value={userInput.nombre}
+                onChange={(e) => setUserInput({ ...userInput, nombre: e.target.value })}
               />
             </label>
           </li>
@@ -24,8 +42,8 @@ export const AddForm = () => {
               <strong>Email:</strong>
               <input
                 type="text"
-                value={data.correo}
-                onChange={(e) => setData({ ...data, correo: e.target.value })}
+                value={userInput.correo}
+                onChange={(e) => setUserInput({ ...userInput, correo: e.target.value })}
               />
             </label>
           </li>
@@ -34,8 +52,8 @@ export const AddForm = () => {
               <strong>Phone:</strong>
               <input
                 type="text"
-                value={data.telefono}
-                onChange={(e) => setData({ ...data, telefono: e.target.value })}
+                value={userInput.telefono}
+                onChange={(e) => setUserInput({ ...userInput, telefono: e.target.value })}
               />
             </label>
           </li>
@@ -44,9 +62,9 @@ export const AddForm = () => {
               <strong>Direccion:</strong>
               <input
                 type="text"
-                value={data.direccion}
+                value={userInput.direccion}
                 onChange={(e) =>
-                  setData({ ...data, direccion: e.target.value })
+                  setUserInput({ ...userInput, direccion: e.target.value })
                 }
               />
             </label>

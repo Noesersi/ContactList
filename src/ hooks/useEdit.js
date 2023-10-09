@@ -11,7 +11,7 @@ export const useEdit = (id) => {
   const navigate = useNavigate();
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch(
+      await fetch(
         `https://contact-list-79285-default-rtdb.europe-west1.firebasedatabase.app/nit/contactos/${id}.json`
       )
         .then((resp) => resp.json())
@@ -23,8 +23,8 @@ export const useEdit = (id) => {
 
 console.log("data", data)
   const editData = async (e) => {
-    e.preventDefault();
-    const response = await fetch(
+   
+    await fetch(
         `https://contact-list-79285-default-rtdb.europe-west1.firebasedatabase.app/nit/contactos/${id}.json`,
       {
         method: "PATCH",
@@ -32,6 +32,7 @@ console.log("data", data)
         headers: { "Content-type": "application/json" },
       }
     );
+    
     navigate("/")
   };
 
