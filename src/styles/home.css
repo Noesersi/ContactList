@@ -22,16 +22,33 @@
   ul {
     list-style: none;
   }
-  .button-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  @media (min-width: 800px ){
+    .button-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .button-container-bottom {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
   }
-  .button-container-bottom {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
+
+  @media (max-width: 799px){
+    .button-container {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+    .button-container-bottom {
+      position: absolute;
+      bottom: 10px;
+      right: 60px;
+    }
   }
+  
   .delete-button {
     background-color: #46255f;
     color: white;

@@ -44,26 +44,25 @@ const ContactCard = () => {
                           <i className="fa-solid fa-envelope icon"></i>
                           {contacto.correo}
                         </p>
+                        <div >
+                            <div className="button-container">
+                              <button
+                                className="delete-button"
+                                onClick={() => handleDeleteClick(id)}
+                              >
+                                <i className="fa-solid fa-trash"></i>
+                              </button>
+                            </div>
+                            <div className="button-container-bottom">
+                              <button
+                                className="delete-button"
+                                onClick={() => navigate(`/edit/${id}`)}
+                              >
+                                <i className="fa-solid fa-pen"></i>
+                              </button>
+                          </div>
+                        </div>
                       </div>
-                      <div >
-                        <div className="button-container">
-                        <button
-                          className="delete-button"
-                          onClick={() => handleDeleteClick(id)}
-                        >
-                          <i className="fa-solid fa-trash"></i>
-                        </button>
-                      </div>
-                      <div className="button-container-bottom">
-                        <button
-                          className="delete-button"
-                          onClick={() => navigate(`/edit/${id}`)}
-                        >
-                          <i className="fa-solid fa-pen"></i>
-                        </button>
-                      </div>
-                      </div>
-                      
                     </div>
                   </div>
                 </div>
