@@ -1,9 +1,20 @@
-.img-fluid-custom {
-    max-width: 200px; 
-    max-height: 200px;
-    object-fit: cover;
-    padding: 3%;
-  }
+.img-container {
+  width: 200px; 
+  height: 200px;
+  overflow: hidden; 
+  border-radius: 50%;
+  margin: 20px; 
+  display: flex; 
+  align-items: center;
+  
+}
+
+.img-custom {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  
+}
   .icon{
     margin-right: 5px;
     color: gray;
@@ -34,4 +45,5 @@
   .delete-button:hover {
     background-color: #ff3333;
   }
+  
   

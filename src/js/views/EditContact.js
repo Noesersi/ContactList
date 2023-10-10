@@ -42,7 +42,7 @@ export const EditContact = () => {
             <label>
               <strong>Email:</strong>
               <input
-                type="text"
+                type="email"
                 value={data.correo}
                 onChange={(e) => setData({ ...data, correo: e.target.value })}
               />

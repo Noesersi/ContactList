@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import React from "react";
 import useAppContext from "../../context/AppContext";
+import { useNavigate } from "react-router";
 
 export const AddForm = () => {
   const {store, actions} = useAppContext();
   const {userInput} = store;
   const {postData, setUserInput} = actions;
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,6 +22,8 @@ export const AddForm = () => {
     } else {
       alert("Por favor, completa todos los campos antes de guardar el contacto.");
     }
+    navigate("/");
+    
   };
 
   return (
@@ -41,7 +45,7 @@ export const AddForm = () => {
             <label>
               <strong>Email:</strong>
               <input
-                type="text"
+                type="email"
                 value={userInput.correo}
                 onChange={(e) => setUserInput({ ...userInput, correo: e.target.value })}
               />
